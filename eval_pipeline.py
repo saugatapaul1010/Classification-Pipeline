@@ -17,11 +17,11 @@ from keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import confusion_matrix , classification_report , accuracy_score
 import argparse
 
-df_path="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification Pipeline/data_df/"
-model_path="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification Pipeline/models/"
-weights_path="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification Pipeline/weights/"
-source="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification Pipeline/data/"
-eval_path="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification Pipeline/evaluation/"
+df_path="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification-pipeline-for-transfer-learning/data_df/"
+model_path="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification-pipeline-for-transfer-learning/models/"
+weights_path="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification-pipeline-for-transfer-learning/weights/"
+source="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification-pipeline-for-transfer-learning/data/"
+eval_path="/home/developer/Desktop/Saugata/e-Crash/ecrash/Classification-pipeline-for-transfer-learning/evaluation/"
 os.mkdir(eval_path) if not os.path.isdir(eval_path) else None
 
 def load_data():
