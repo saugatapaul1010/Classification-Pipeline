@@ -183,7 +183,7 @@ def predict_on_test(model_name, size_dict, stage_no):
                                  output_dict=True)
 
     df_rep = pd.DataFrame(report).transpose()
-    df_rep.to_csv(eval_path+'{}_class_report_stage_{}.csv'.format(model_name,stage_no), index=None)
+    df_rep.to_csv(eval_path+'{}_class_report_stage_{}.csv'.format(model_name,stage_no))
     print('Classification report prepared and saved..')
 
     plot_confusion_matrix(y_true, y_pred, test_generator, model_name,stage_no)
@@ -211,6 +211,3 @@ if __name__ == '__main__':
     size_dict["xception"] = (299, 299)
 
     predict_on_test(args.model_name, size_dict, args.stage_num)
-
-
-
