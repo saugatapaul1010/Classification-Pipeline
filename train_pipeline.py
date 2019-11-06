@@ -43,6 +43,14 @@ def load_data():
     df_val=pd.read_csv(df_path+"val.csv")
     return df_train, df_val
 
+def save_summary(model, model_name, stage_no):
+    stringlist = []
+    model.summary(print_fn=lambda x: stringlist.append(x))
+    short_model_summary = "\n".join(stringlist)
+    
+    with open(model_path+"{}_model_summary_stage_{}.txt".format(model_name, stage_no), "w") as text_file:
+        print(short_model_summary, file=text_file)
+
 def init_sizes():
     """
     This block of code is used to initialize the input sizes
@@ -108,6 +116,23 @@ def callbacks_list(input_params, stage_n):
     list_ = [checkpoint, reduce_learning_rate, early_stop, history]
     return list_
 
+def no_of_classes():
+    """
+    This function will be determine the number of classes that
+    the model needs to be trained on. This function will determine
+    the number of classes automatically without the user having
+    to input the number of classes manually
+    """
+    df_train, df_val = load_data()
+    datagen = ImageDataGenerator(rescale=1./255)
+    generator = datagen.flow_from_dataframe(dataframe=df_train,
+                                            directory=source,
+                                            x_col="filenames",
+                                            y_col="class_label",                                                    
+                                            class_mode='categorical')
+    classes = len(generator.class_indices.keys())
+    return classes
+    
 def train_stage1(input_params):
     """
     In this stage, we will freeze all the convolution blocks and train
@@ -128,7 +153,7 @@ def train_stage1(input_params):
     x = Dense(input_params['dense_neurons'], activation='relu', kernel_initializer='he_normal')(x)
 
     #Adding a final dense output final layer
-    predictions = Dense(input_params['classes'], activation='softmax', kernel_initializer='glorot_uniform')(x)
+    predictions = Dense(no_of_classes(), activation='softmax', kernel_initializer='glorot_uniform')(x)
 
     #Define the model
     model_stg1 = Model(inputs=base_model.input, outputs=predictions)
@@ -186,6 +211,8 @@ def train_stage1(input_params):
     
     model_stg1.load_weights(model_path+"{}_weights_stage_{}.hdf5".format(input_params['model_name'],1))
     model_stg1.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],1))
+    
+    save_summary(model_stg1, input_params['model_name'], 1)
         
     stage1_params=dict()
     stage1_params['train_generator']=train_generator
@@ -204,9 +231,11 @@ def train_stage2(input_params, stage1_params, model_stg2):
     """
     At this point, the top layers are well trained and we can start fine-tuning
     convolutional layers of the pre-trained architecture. We will freeze the bottom 
-    N layers and train the remaining top layers. We will train the top N blocks and 
-    we will freeze the first N layers. A very low learning rate is used, so as to 
-    not wreck the convolution base with massive gradient updates
+    x layers and train the remaining top layers. We will train the top N-x blocks and 
+    we will freeze the first x layers. A very low learning rate is used, so as to 
+    not wreck the convolution base with massive gradient updates. For training on 
+    stage 2, it's a good idea to double the number of epochs to train the model
+    since the learning rate used for stage 2 is kept extremely low.
     """
     
     print("\nTraining the model by tuning the top convolution block along with the dense layers and freezing the rest...")
@@ -264,6 +293,7 @@ def train_stage2(input_params, stage1_params, model_stg2):
         
     model_stg2.load_weights(model_path+"{}_weights_stage_{}.hdf5".format(input_params['model_name'],2))
     model_stg2.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],2))
+    save_summary(model_stg2, input_params['model_name'], 2)
     
     print("\nTime taken to train the model in stage 2: ",dt.now()-st)
                   
@@ -271,7 +301,11 @@ def train(input_params):
     """
     This is a generic function which will be used to make
     other function calls to start training the model at
-    all the stages.
+    all the stages. The model will be trained on the second 
+    stage if and only yes the "finetune" parameter has been
+    set to 'yes' or else, only the first stage will train.
+    By default, both the stages will train, so you will have
+    to explicitly set the value of 'finetune' to 'no'.
     """
     st=dt.now()
     model_stg1, stage1_params, size_dict = train_stage1(input_params)
@@ -289,7 +323,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='this script will train 3 machine learning models using transfer learning')
     parser.add_argument('--model_name', type=str, default='vgg16', help='choose the type of model you want to train with')
     parser.add_argument('--dense_neurons', type=int, default=1024, help='eneter the number of neurons you want for the pre-final layer')
-    parser.add_argument('--classes', type=int, default=3, help="the number of classes for which the model should be trained on")
     parser.add_argument('--batch_size', type=int, default=5, help="enter the number of batches for which the model should be trained on")
     parser.add_argument('--stage1_lr', type=float, default=0.001, help="enter the learning rate for stage 1 training")
     parser.add_argument('--stage2_lr', type=float, default=0.00001, help="enter the learning rate for stage 2 training")
@@ -302,7 +335,6 @@ if __name__ == '__main__':
     input_params=dict()
     input_params['model_name']=args.model_name
     input_params['dense_neurons']=args.dense_neurons
-    input_params['classes']=args.classes
     input_params['batch_size']=args.batch_size
     input_params['stage1_lr']=args.stage1_lr
     input_params['stage2_lr']=args.stage2_lr
@@ -313,3 +345,4 @@ if __name__ == '__main__':
     
     train(input_params)
     
+#Save model has been implemented

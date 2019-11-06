@@ -63,10 +63,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='prepare the original dataset into train, validation and test sets')
     parser.add_argument('--val_split', type=float, default=0.2, help='fraction of train data to be used as validation data')
     parser.add_argument('--test_split', type=float, default=0.2, help='fraction of original data to used as test data')
-    parser.add_argument('--source', type=str, default='/home/developer/Desktop/data/', help="source directory of the input images")
+    parser.add_argument('--source', type=str, default='/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data', help="source directory of the input images")
     args = parser.parse_args()
     
     st = dt.now()
     prepare_data(args.val_split, args.test_split, args.source)
     print("Train, Test and Validation dataset prepared successfully..")
     print("Time taken to prepare the dataset: ",dt.now()-st)
+    
+#Save model has been implemented

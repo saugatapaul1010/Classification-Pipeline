@@ -12,6 +12,7 @@ import seaborn as sns
 import numpy as np
 import pandas as pd
 import os
+
 from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import confusion_matrix , classification_report , accuracy_score
@@ -196,3 +197,5 @@ if __name__ == '__main__':
     size_dict["xception"] = (299, 299)
     
     predict_on_test(args.model_name, size_dict, args.stage_num)
+    
+#Save model has been implemented
