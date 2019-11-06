@@ -344,5 +344,3 @@ if __name__ == '__main__':
     input_params['finetune']=args.finetune
     
     train(input_params)
-    
-#Save model has been implemented

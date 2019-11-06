@@ -20,5 +20,3 @@ def save_summary(model, model_name, stage_no):
         print(short_model_summary, file=text_file)
 
 save_summary(model, "vgg16", 1)
-
-#Save model has been implemented

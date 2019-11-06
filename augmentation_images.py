@@ -74,5 +74,3 @@ if __name__ == "__main__":
     augmentation_images(input_img_dir=args.input_img_dir,img_format=args.img_format,out_img_dir=args.out_img_dir,
                         no_of_replications=args.no_of_replications,rotate_min=args.rotate_min,rotate_max=args.rotate_max,
                         scale_min=args.scale_min,scale_max=args.scale_max,translate_min=args.translate_min,translate_max=args.translate_max)
-
-#Save model has been implemented

@@ -197,5 +197,3 @@ if __name__ == '__main__':
     size_dict["xception"] = (299, 299)
     
     predict_on_test(args.model_name, size_dict, args.stage_num)
-    
-#Save model has been implemented
