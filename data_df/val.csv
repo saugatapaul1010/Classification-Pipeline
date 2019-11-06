@@ -1,37 +1,25 @@
 filenames,class_label
-/home/developer/Desktop/data/handwritten/300737513_0.png,handwritten
-/home/developer/Desktop/data/printed/304746505_1.png,printed
-/home/developer/Desktop/data/randoms/test_img6.png,randoms
-/home/developer/Desktop/data/handwritten/292366589_1.png,handwritten
-/home/developer/Desktop/data/handwritten/292366529_0.png,handwritten
-/home/developer/Desktop/data/handwritten/300117921_0.png,handwritten
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-21 14-27-36.png,randoms
-/home/developer/Desktop/data/printed/304760497_0.png,printed
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-23 12-31-09.png,randoms
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-23 18-33-38.png,randoms
-/home/developer/Desktop/data/printed/305011121_4.png,printed
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-11 19-19-13.png,randoms
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-25 17-29-46.png,randoms
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-25 17-57-08.png,randoms
-/home/developer/Desktop/data/handwritten/292366629_1.png,handwritten
-/home/developer/Desktop/data/handwritten/300345541_0.png,handwritten
-/home/developer/Desktop/data/printed/304580313_5.png,printed
-/home/developer/Desktop/data/handwritten/295006165_0.png,handwritten
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-11 15-06-58.png,randoms
-/home/developer/Desktop/data/printed/305011229_3.png,printed
-/home/developer/Desktop/data/handwritten/292366625_0.png,handwritten
-/home/developer/Desktop/data/printed/304497521_3.png,printed
-/home/developer/Desktop/data/handwritten/292366621_1.png,handwritten
-/home/developer/Desktop/data/handwritten/292366585_1.png,handwritten
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-09 18-01-44.png,randoms
-/home/developer/Desktop/data/printed/303622829_4.png,printed
-/home/developer/Desktop/data/printed/303623045_4.png,printed
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-09 18-00-31.png,randoms
-/home/developer/Desktop/data/handwritten/292366629_0.png,handwritten
-/home/developer/Desktop/data/printed/304569809_3.png,printed
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-09 18-14-31.png,randoms
-/home/developer/Desktop/data/printed/304041609_3.png,printed
-/home/developer/Desktop/data/printed/305012629_8.png,printed
-/home/developer/Desktop/data/handwritten/292366517_1.png,handwritten
-/home/developer/Desktop/data/randoms/Screenshot from 2019-10-25 17-31-10.png,randoms
-/home/developer/Desktop/data/printed/304990289_3.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/304990241_3.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/305011121_4.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/304913505_13.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/304746505_1.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366565_0.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366529_1.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366553_0.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366545_1.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366561_1.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/304515237_9.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/305000229_5.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/304760053_10.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366621_0.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366509_1.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/303623045_4.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/304676825_2.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/304569809_3.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/300117921_0.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366557_0.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366533_0.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366525_1.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/304746697_3.png,printed
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/handwritten/292366541_0.png,handwritten
+/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/printed/303622829_4.png,printed
