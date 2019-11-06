@@ -12,16 +12,19 @@ from datetime import datetime as dt
 import pandas as pd
 import argparse
 
+df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data\\"
+
+
 def prepare_data(val_split, test_split, source):
     st = dt.now()
-    
+
     delim="/"
-     
+
     destination = "data_df/"
     os.mkdir(destination) if not os.path.isdir(destination) else None
 
     fol_names = os.listdir(source+delim)
-    
+
     data_dict = dict()
     for i in range(0,len(fol_names)):
         fol_path = os.path.abspath(source) + delim + fol_names[i]
@@ -56,17 +59,19 @@ def prepare_data(val_split, test_split, source):
     df_train.to_csv(destination+"train.csv", index=None)
     df_val.to_csv(destination+"val.csv", index=None)
     df_test.to_csv(destination+"test.csv", index=None)
-    
+
     print("Time taken to prepare the whole dataset: ",dt.now()-st)
-    
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='prepare the original dataset into train, validation and test sets')
     parser.add_argument('--val_split', type=float, default=0.2, help='fraction of train data to be used as validation data')
     parser.add_argument('--test_split', type=float, default=0.2, help='fraction of original data to used as test data')
-    parser.add_argument('--source', type=str, default='/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data', help="source directory of the input images")
+    parser.add_argument('--source', type=str, default=df_path, help="source directory of the input images")
     args = parser.parse_args()
-    
+
     st = dt.now()
     prepare_data(args.val_split, args.test_split, args.source)
     print("Train, Test and Validation dataset prepared successfully..")
     print("Time taken to prepare the dataset: ",dt.now()-st)
+
+
