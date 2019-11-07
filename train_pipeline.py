@@ -6,7 +6,6 @@ Created on Tue Nov 1 19:18:20 2019
 @author: saugata paul
 """
 
-
 #Import the deep learning libraries
 from keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
 from keras import optimizers
@@ -339,7 +338,6 @@ def train(input_params):
     print("\nAll models are trained sucessfully..")
     print("\nTime taken to train both the models : ",dt.now()-st)
     print("\nAll model attributes are saved in this path: ",model_path)
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='this script will train 3 machine learning models using transfer learning')
