@@ -28,17 +28,15 @@ import eval_pipeline
 #!wget https://github.com/keras-team/keras-applications/releases/download/resnet/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5 --no-check-certificate
 #!wget https://github.com/fchollet/deep-learning-models/releases/download/v0.4/xception_weights_tf_dim_ordering_tf_kernels.h5 --no-check-certificate
 
-df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
-model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
-weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
-source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
-
 df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
 model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
 weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\weights\\"
 source="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data\\"
-eval_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\evaluation\\"
 
+df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
+model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
+weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
+source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
 os.mkdir(model_path) if not os.path.isdir(model_path) else None
 
 def load_data():

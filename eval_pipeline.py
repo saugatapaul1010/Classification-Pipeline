@@ -18,11 +18,6 @@ from keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import confusion_matrix , classification_report , accuracy_score
 import argparse
 
-df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
-model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
-weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
-source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
-eval_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/evaluation/"
 
 df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
 model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
@@ -30,6 +25,11 @@ weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-
 source="C:\\Users\\206255\\Desktop\\Saugata Paul\Classification-pipeline-for-transfer-learning\\data\\"
 eval_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\evaluation\\"
 
+df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
+model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
+weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
+source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
+eval_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/evaluation/"
 os.mkdir(eval_path) if not os.path.isdir(eval_path) else None
 
 def load_data():
@@ -100,32 +100,32 @@ def plot_confusion_matrix(test_y, predict_y, test_generator, model_name, stage_n
     C = confusion_matrix(test_y, predict_y)
     print("Percentage of misclassified points ",(len(test_y)-np.trace(C))/len(test_y)*100)
 
-    A =(((C.T)/(C.sum(axis=1))).T)
-    B =(C/C.sum(axis=0))
+    A = (((C.T)/(C.sum(axis=1))).T)
+    B = (C/C.sum(axis=0))
 
-    labels = list(test_generator.class_indices.values())
+    labels = list(test_generator.class_indices.keys())
     cmap=sns.light_palette("green")
     # representing A in heatmap format
-    plt.figure(figsize=(10,5))
+    plt.figure(figsize=(10,10))
     sns.heatmap(C, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
     plt.title('{}_cm_matrix_stage_{}'.format(model_name,stage_no))
     plt.savefig(eval_path+'{}_cm_matrix_stage_{}.png'.format(model_name,stage_no))
 
-    plt.figure(figsize=(10,5))
+    plt.figure(figsize=(10,10))
     sns.heatmap(B, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
-    plt.title('{}_precision_matrix_stage_{}'.format(model_name,stage_no))
+    plt.title('{}_recall_matrix_stage_{}'.format(model_name,stage_no))
     plt.savefig(eval_path+'{}_precision_matrix_stage_{}.png'.format(model_name,stage_no))
 
     # representing B in heatmap format
-    plt.figure(figsize=(10,5))
+    plt.figure(figsize=(10,10))
     sns.heatmap(A, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
-    plt.title('{}_recall_matrix_stage_{}'.format(model_name,stage_no))
+    plt.title('{}_precsion_matrix_stage_{}'.format(model_name,stage_no))
     plt.savefig(eval_path+'{}_recall_matrix_stage_{}.png'.format(model_name,stage_no))
 
 def predict_on_test(model_name, size_dict, stage_no):
@@ -171,7 +171,7 @@ def predict_on_test(model_name, size_dict, stage_no):
 
     cm=confusion_matrix(y_true, y_pred)
     df_cm = pd.DataFrame(cm).transpose()
-    df_cm=df_cm.rename(mapper=dict, index=dictionary, columns=dictionary, copy=True, inplace=False, level=None, errors='ignore')
+    df_cm=df_cm.rename(mapper=dict, index=dictionary, columns=dictionary, copy=True, inplace=False)
     df_cm.to_csv(eval_path+'{}_cm_stage_{}.csv'.format(model_name,stage_no))
     print('Confusion matrix prepare and saved..')
 
