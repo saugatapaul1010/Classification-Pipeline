@@ -38,7 +38,7 @@ wget https://github.com/fchollet/deep-learning-models/releases/download/v0.4/xce
 
 ```
 
-Download and place these weights in the '/weights' folder. These are the pre-trained architectures
+Download and place these weights in the '/weights' folder. These are the pre-trained architectures that are used in this project - vgg16, inceptionv3, resnet50, inception_resnet, nasnet, xception
 
 # Data Preperation:
 
