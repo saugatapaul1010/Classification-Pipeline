@@ -88,5 +88,3 @@ layer_name="conv2d_189"
 plot_layer_arch(model, model_name, stage_no)
 
 get_layer_index(model,layer_name)
-
-
