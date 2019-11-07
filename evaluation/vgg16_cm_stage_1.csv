@@ -1,3 +1,4 @@
-,handwritten,printed
-handwritten,6,3
-printed,9,12
+,handwritten,printed,random
+handwritten,3,2,4
+printed,8,7,6
+random,4,6,5

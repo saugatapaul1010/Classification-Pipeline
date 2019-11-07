@@ -5,6 +5,7 @@ Created on Wed Nov  6 16:21:45 2019
 
 @author: saugata paul
 """
+
 from keras.models import load_model
 
 eval_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
