@@ -47,13 +47,13 @@ python data_preprocess.py --val_split 0.2 --test_split 0.3
 ```
 
 ```
-      options:
+options:
 
-    --val_split          : fraction of train data to be used as validation data
+    --val_split          : fraction of train data to be used as validation data.
                            default=0.2
-    --test_split         : fraction of original data to used as test data
+    --test_split         : fraction of original data to used as test data.
                            default=0.2
-    --source             : source directory of the input images
+    --source             : source directory of the input images.
                            default location is the path of 'df_path'
 ```
 
@@ -66,14 +66,14 @@ python train_pipeline.py --model_name vgg16 --epochs1 10 --epochs2 20 --metric a
 ```
 
 ```
-      options:
+options:
 
     --model_name         : choose the type of model you want to train with. you can select any one
                            of these: vgg16, inceptionv3, resnet50, inception_resnet, nasnet, xception.
-                           default='vgg16'.
+                           default='vgg16'
     --dense_neurons      : enter the number of neurons you want for the pre-final layer. you can select
                            integer number that you want.
-                           default=1024.
+                           default=1024
     --batch_size         : enter the number of batches for which the model should be trained on.
                            default=32
     --stage1_lr          : enter the learning rate for stage 1 training. the learning rate for stage 1
@@ -89,7 +89,7 @@ python train_pipeline.py --model_name vgg16 --epochs1 10 --epochs2 20 --metric a
                            wish to run.
                            default='val_accuracy'
     --metric             : enter the metric you want the model to optimize.
-                           default='accuracy',
+                           default='accuracy'
     --epochs1            : enter the number of epochs you want the model to train for in stage 1.
                            default=10
     --epochs2            : enter the number of epochs you want the model to train for in stage 2. in stage 2,
@@ -114,7 +114,7 @@ python eval_pipeline.py --model_name vgg16 --stage_num 2
 ```
 
 ```
-      options:
+options:
 
     --model_name         : choose the type of model you want to evaluate with.
                            default='vgg16'
