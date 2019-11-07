@@ -16,9 +16,10 @@ The raw data needs to be present inside the 'data' folder located at the root di
 
 ```
 pip install -r requirements.txt
+sudo install graphviz
 ```
 
-Go to the root folder of this project in your shell and execute the above command. This will install all the dependencies that this project needs.
+Go to the root folder of this project in your shell and execute the above command. This will install all the dependencies that this project needs. Please note that in Linux, graphviz needs to be installed with sudo and not pip. For configuring graphviz in windows, you can refer to this link: http://graphviz.org/
 
 # Downloading the pre-trained model weights:
 
