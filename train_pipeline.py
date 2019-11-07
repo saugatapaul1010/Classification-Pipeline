@@ -231,7 +231,7 @@ def train_stage1(input_params):
     model_stg1.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],1))
 
     save_summary(model_stg1, input_params['model_name'], 1)
-    plot_layer_arch(model_stg1, input_params['model_name'], 1)
+    #plot_layer_arch(model_stg1, input_params['model_name'], 1)
 
     stage1_params=dict()
     stage1_params['train_generator']=train_generator
@@ -317,7 +317,7 @@ def train_stage2(input_params, stage1_params, model_stg2):
     model_stg2.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],2))
 
     save_summary(model_stg2, input_params['model_name'], 2)
-    plot_layer_arch(model_stg2, input_params['model_name'], 2)
+    #plot_layer_arch(model_stg2, input_params['model_name'], 2)
 
     print("\nTime taken to train the model in stage 2: ",dt.now()-st)
 
