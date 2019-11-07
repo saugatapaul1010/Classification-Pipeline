@@ -20,13 +20,15 @@ from datetime import datetime as dt
 from keras.preprocessing.image import ImageDataGenerator
 from keras.layers import Dense, GlobalAveragePooling2D
 import eval_pipeline
+from keras.utils import plot_model
+
 
 #!wget https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5 --no-check-certificate
 #!wget https://github.com/fchollet/deep-learning-models/releases/download/v0.5/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5 --no-check-certificate
 #!wget https://github.com/fchollet/deep-learning-models/releases/download/v0.7/inception_resnet_v2_weights_tf_dim_ordering_tf_kernels_notop.h5 --no-check-certificate
 #!wget https://github.com/titu1994/Keras-NASNet/releases/download/v1.2/NASNet-large-no-top.h5 --no-check-certificate
 #!wget https://github.com/keras-team/keras-applications/releases/download/resnet/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5 --no-check-certificate
-#!wget https://github.com/fchollet/deep-learning-models/releases/download/v0.4/xception_weights_tf_dim_ordering_tf_kernels.h5 --no-check-certificate
+#!wget https://github.com/fchollet/deep-learning-models/releases/download/v0.4/xception_weights_tf_dim_ordering_tf_kernels_notop.h5 --no-check-certificate
 
 df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
 model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
@@ -47,6 +49,15 @@ def load_data():
     df_train=pd.read_csv(df_path+"train.csv")
     df_val=pd.read_csv(df_path+"val.csv")
     return df_train, df_val
+
+def plot_layer_arch(model, model_name, stage_no):
+    """
+    Get the model architecture, so that you can make
+    the decision upto which layers you can freeze.
+    The particular layer name can in inferred from 
+    this plot.
+    """
+    plot_model(model, to_file=model_path+'{}_model_architecture_stage_{}.pdf'.format(model_name,stage_no), show_shapes=True, show_layer_names=True)
 
 def save_summary(model, model_name, stage_no):
     stringlist = []
@@ -98,7 +109,7 @@ def load_models(model_name):
         base_model.load_weights(weights_path+"NASNet-large-no-top.h5")
     elif(model_name=="xception"):
         base_model = xception.Xception(weights=None, include_top=False)
-        base_model.load_weights(weights_path+"inception_resnet_v2_weights_tf_dim_ordering_tf_kernels_notop.h5")
+        base_model.load_weights(weights_path+"xception_weights_tf_dim_ordering_tf_kernels.h5")
     return base_model
 
 #Define custom callbacks
@@ -216,8 +227,9 @@ def train_stage1(input_params):
 
     model_stg1.load_weights(model_path+"{}_weights_stage_{}.hdf5".format(input_params['model_name'],1))
     model_stg1.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],1))
-
+    
     save_summary(model_stg1, input_params['model_name'], 1)
+    plot_layer_arch(model_stg1, input_params['model_name'], 1)
 
     stage1_params=dict()
     stage1_params['train_generator']=train_generator
@@ -241,6 +253,9 @@ def train_stage2(input_params, stage1_params, model_stg2):
     not wreck the convolution base with massive gradient updates. For training on
     stage 2, it's a good idea to double the number of epochs to train the model
     since the learning rate used for stage 2 is kept extremely low.
+    
+    Please refer to layer_inspection.py file for more info on how the layers are
+    selected.
     """
 
     print("\nTraining the model by tuning the top convolution block along with the dense layers and freezing the rest...")
@@ -257,24 +272,24 @@ def train_stage2(input_params, stage1_params, model_stg2):
         for layer in model_stg2.layers[249:]:
            layer.trainable = True
     elif(input_params['model_name']=="resnet50"):
-        for layer in model_stg2.layers[:742]:
+        for layer in model_stg2.layers[:143]:
            layer.trainable = False
-        for layer in model_stg2.layers[742:]:
+        for layer in model_stg2.layers[143:]:
            layer.trainable = True
     elif(input_params['model_name']=="inception_resnet"):
-        for layer in model_stg2.layers[:758]:
+        for layer in model_stg2.layers[:759]:
            layer.trainable = False
-        for layer in model_stg2.layers[758:]:
+        for layer in model_stg2.layers[759:]:
            layer.trainable = True
     elif(input_params['model_name']=="nasnet"):
-        for layer in model_stg2.layers[:15]:
+        for layer in model_stg2.layers[:714]:
            layer.trainable = False
-        for layer in model_stg2.layers[15:]:
+        for layer in model_stg2.layers[714:]:
            layer.trainable = True
     elif(input_params['model_name']=="xception"):
-        for layer in model_stg2.layers[:15]:
+        for layer in model_stg2.layers[:106]:
            layer.trainable = False
-        for layer in model_stg2.layers[15:]:
+        for layer in model_stg2.layers[106:]:
            layer.trainable = True
 
     #Recompile the model, train the top 2 blocks
@@ -298,7 +313,9 @@ def train_stage2(input_params, stage1_params, model_stg2):
 
     model_stg2.load_weights(model_path+"{}_weights_stage_{}.hdf5".format(input_params['model_name'],2))
     model_stg2.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],2))
+    
     save_summary(model_stg2, input_params['model_name'], 2)
+    plot_layer_arch(model_stg2, input_params['model_name'], 2)
 
     print("\nTime taken to train the model in stage 2: ",dt.now()-st)
 

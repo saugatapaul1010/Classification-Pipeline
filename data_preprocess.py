@@ -12,7 +12,7 @@ from datetime import datetime as dt
 import pandas as pd
 import argparse
 
-#df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data\\"
+df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data\\"
 df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data"
 
 def prepare_data(val_split, test_split, source):
