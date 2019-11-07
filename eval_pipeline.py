@@ -18,17 +18,20 @@ import argparse
 import pycm
 
 
-df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
-model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
-weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\weights\\"
-source="C:\\Users\\206255\\Desktop\\Saugata Paul\Classification-pipeline-for-transfer-learning\\data\\"
-eval_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\evaluation\\"
+
 
 df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
 model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
 weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
 source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
 eval_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/evaluation/"
+
+df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
+model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
+weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\weights\\"
+source="C:\\Users\\206255\\Desktop\\Saugata Paul\Classification-pipeline-for-transfer-learning\\data\\"
+eval_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\evaluation\\"
+
 os.mkdir(eval_path) if not os.path.isdir(eval_path) else None
 
 def load_data():
@@ -96,14 +99,14 @@ def get_metrics(y_true, y_pred):
 
 def get_complete_report(y_true, y_pred, model_name, stage_no, class_indices):
     """
-    This is a separate function written to calculate every possible 
+    This is a separate function written to calculate every possible
     classification metric value that different classification problems
     might need. This function will be used to get a report of all the
     classification metrics, as well the class wise statistics for all the
     classes and export it to a HTML file saved at the evaluation path.
-    
+
     References to the library: https://www.pycm.ir/doc/index.html#Cite
-        
+
       @article{Haghighi2018,
       doi = {10.21105/joss.00729},
       url = {https://doi.org/10.21105/joss.00729},
@@ -117,25 +120,25 @@ def get_complete_report(y_true, y_pred, model_name, stage_no, class_indices):
       title = {{PyCM}: Multiclass confusion matrix library in Python},
       journal = {Journal of Open Source Software}
       }
-      
+
     """
-    
+
     label_indices = dict()
     for (k,v) in class_indices.items():
         label_indices[v]=k
-        
+
     y_true_label = list(y_true)
     y_pred_label = list(y_pred)
-    
+
     for idx, item in enumerate(y_true_label):
         y_true_label[idx] = label_indices[item]
-        
+
     for idx, item in enumerate(y_pred_label):
         y_pred_label[idx] = label_indices[item]
-    
+
     cm = pycm.ConfusionMatrix(y_true_label, y_pred_label)
     cm.save_html(eval_path+'{}_detailed_metrics_analysis_stage_{}'.format(model_name,stage_no))
-    
+
 def plot_confusion_matrix(test_y, predict_y, test_generator, model_name, stage_no):
     """
     Based on the model name and the stage number, this function will be used
@@ -172,7 +175,7 @@ def plot_confusion_matrix(test_y, predict_y, test_generator, model_name, stage_n
     plt.ylabel('Original Class')
     plt.title('{}_precsion_matrix_stage_{}'.format(model_name,stage_no))
     plt.savefig(eval_path+'{}_recall_matrix_stage_{}.png'.format(model_name,stage_no))
-    
+
 
 def predict_on_test(model_name, size_dict, stage_no):
     """
@@ -242,14 +245,14 @@ def predict_on_test(model_name, size_dict, stage_no):
 
     #Get the train vs validation loss for all epochs
     plt_epoch_error(history_df,model_name,stage_no)
-    
+
     #Generate a complete report and save it as an HTML file in the evaluation folder location
     get_complete_report(y_true, y_pred, model_name, stage_no, class_indices)
-    
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='this script will train 3 machine learning models using transfer learning')
-    parser.add_argument('--model_name', type=str, default='vgg16', help='choose the type of model you want to train with')
-    parser.add_argument('--stage_num', type=int, default=2, help='enter the number of neurons you want for the pre-final layer')
+    parser.add_argument('--model_name', type=str, default='vgg16', help='choose the type of model you want to evaluate with')
+    parser.add_argument('--stage_num', type=int, default=2, help='enter the name of the stage that you want to evaluate models from')
     args = parser.parse_args()
 
     size_dict = dict()

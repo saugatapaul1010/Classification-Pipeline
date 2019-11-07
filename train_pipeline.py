@@ -29,15 +29,18 @@ from keras.utils import plot_model
 #!wget https://github.com/keras-team/keras-applications/releases/download/resnet/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5 --no-check-certificate
 #!wget https://github.com/fchollet/deep-learning-models/releases/download/v0.4/xception_weights_tf_dim_ordering_tf_kernels_notop.h5 --no-check-certificate
 
-df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
-model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
-weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\weights\\"
-source="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data\\"
+
 
 df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
 model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
 weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
 source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
+
+df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
+model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
+weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\weights\\"
+source="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data\\"
+
 os.mkdir(model_path) if not os.path.isdir(model_path) else None
 
 def load_data():
@@ -53,7 +56,7 @@ def plot_layer_arch(model, model_name, stage_no):
     """
     Get the model architecture, so that you can make
     the decision upto which layers you can freeze.
-    The particular layer name can in inferred from 
+    The particular layer name can in inferred from
     this plot.
     """
     plot_model(model, to_file=model_path+'{}_model_architecture_stage_{}.pdf'.format(model_name,stage_no), show_shapes=True, show_layer_names=True)
@@ -134,9 +137,9 @@ def callbacks_list(input_params, stage_n):
 def no_of_classes():
     """
     This function will be determine the number of classes that
-    the model needs to be trained on. This function will determine
+    the model needs to train on. This function will determine
     the number of classes automatically without the user having
-    to input the number of classes manually
+    to input the number of classes manually.
     """
     df_train, df_val = load_data()
     datagen = ImageDataGenerator(rescale=1./255)
@@ -213,7 +216,7 @@ def train_stage1(input_params):
 
     history=model_stg1.fit_generator(generator=train_generator,
                                      steps_per_epoch=nb_train_samples // input_params['batch_size'],
-                                     epochs=input_params['epochs'],
+                                     epochs=input_params['epochs1'],
                                      validation_data=val_generator,
                                      validation_steps=nb_val_samples // input_params['batch_size'],
                                      callbacks=callbacks_list(input_params,1)) #1 for stage 1
@@ -226,7 +229,7 @@ def train_stage1(input_params):
 
     model_stg1.load_weights(model_path+"{}_weights_stage_{}.hdf5".format(input_params['model_name'],1))
     model_stg1.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],1))
-    
+
     save_summary(model_stg1, input_params['model_name'], 1)
     plot_layer_arch(model_stg1, input_params['model_name'], 1)
 
@@ -252,7 +255,7 @@ def train_stage2(input_params, stage1_params, model_stg2):
     not wreck the convolution base with massive gradient updates. For training on
     stage 2, it's a good idea to double the number of epochs to train the model
     since the learning rate used for stage 2 is kept extremely low.
-    
+
     Please refer to layer_inspection.py file for more info on how the layers are
     selected.
     """
@@ -300,7 +303,7 @@ def train_stage2(input_params, stage1_params, model_stg2):
     #alongside the top Dense layers
     history=model_stg2.fit_generator(generator=stage1_params['train_generator'],
                                      steps_per_epoch=stage1_params['nb_train_samples'] // input_params['batch_size'],
-                                     epochs=input_params['epochs'],
+                                     epochs=input_params['epochs2'],
                                      validation_data=stage1_params['val_generator'],
                                      validation_steps=stage1_params['nb_val_samples'] // input_params['batch_size'],
                                      callbacks=callbacks_list(input_params,2))
@@ -312,7 +315,7 @@ def train_stage2(input_params, stage1_params, model_stg2):
 
     model_stg2.load_weights(model_path+"{}_weights_stage_{}.hdf5".format(input_params['model_name'],2))
     model_stg2.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],2))
-    
+
     save_summary(model_stg2, input_params['model_name'], 2)
     plot_layer_arch(model_stg2, input_params['model_name'], 2)
 
@@ -340,15 +343,16 @@ def train(input_params):
     print("\nAll model attributes are saved in this path: ",model_path)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='this script will train 3 machine learning models using transfer learning')
+    parser = argparse.ArgumentParser(description='this script will train 3 machine learning modelsusing transfer learning')
     parser.add_argument('--model_name', type=str, default='vgg16', help='choose the type of model you want to train with')
     parser.add_argument('--dense_neurons', type=int, default=1024, help='eneter the number of neurons you want for the pre-final layer')
     parser.add_argument('--batch_size', type=int, default=5, help="enter the number of batches for which the model should be trained on")
     parser.add_argument('--stage1_lr', type=float, default=0.001, help="enter the learning rate for stage 1 training")
-    parser.add_argument('--stage2_lr', type=float, default=0.00001, help="enter the learning rate for stage 2 training")
+    parser.add_argument('--stage2_lr', type=float, default=0.000001, help="enter the learning rate for stage 2 training")
     parser.add_argument('--monitor',type=str, default='val_accuracy', help="enter the metric you want to monitor")
     parser.add_argument('--metric',type=str, default='accuracy', help="enter the metric you want the model to optimize")
-    parser.add_argument('--epochs',type=int, default=5, help="enter the number of epochs you want the model to train for")
+    parser.add_argument('--epochs1',type=int, default=10, help="enter the number of epochs you want the model to train for in stage 1")
+    parser.add_argument('--epochs2',type=int, default=20, help="enter the number of epochs you want the model to train for in stage 2")
     parser.add_argument('--finetune',type=str, default='yes', help="state 'yes' or 'no' to say whether or not you want to fine tune the convolution block")
     args = parser.parse_args()
 
@@ -360,7 +364,8 @@ if __name__ == '__main__':
     input_params['stage2_lr']=args.stage2_lr
     input_params['monitor']=args.monitor
     input_params['metric']=args.metric
-    input_params['epochs']=args.epochs
+    input_params['epochs1']=args.epochs1
+    input_params['epochs2']=args.epochs2
     input_params['finetune']=args.finetune
 
     train(input_params)

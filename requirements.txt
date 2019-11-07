@@ -13,3 +13,5 @@ imgaug
 itertools
 scipy
 pycm
+pydot
+graphviz

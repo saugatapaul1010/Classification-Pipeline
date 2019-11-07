@@ -1,101 +1,151 @@
 filenames,class_label
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2541.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2505.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2507.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2459.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2508.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2460.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2541.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2517.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2488.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2514.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2532.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2535.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2533.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2530.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2464.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2537.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2535.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2504.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2513.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2513.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2512.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2489.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2464.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2476.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2475.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2509.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2542.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2482.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2527.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2502.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2520.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2519.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2549.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2517.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2523.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2502.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2468.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2497.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2446.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2537.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2490.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2474.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2454.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2527.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2530.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2517.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2531.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2535.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2539.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2518.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2482.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2496.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2528.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2529.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2499.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2526.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2478.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2474.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2473.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2460.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2485.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2535.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2472.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2471.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2494.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2461.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2504.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2541.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2538.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2453.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2522.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2512.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2511.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2508.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2456.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2493.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2476.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2510.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2532.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2499.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2532.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2534.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2452.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2501.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2474.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2451.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2450.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2508.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2479.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2486.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/dog/dog2485.jpg,dog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2544.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/tiger/tiger2509.jpg,tiger
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2487.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2459.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2523.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/frog/frog2477.jpg,frog
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/horse/horse2467.jpg,horse
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2522.jpg,giraffe
-/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/giraffe/giraffe2545.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2494.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2466.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2456.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2538.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2502.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2475.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2527.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2462.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2543.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2488.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2514.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2469.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2541.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2545.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2503.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2511.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2522.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2466.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2449.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2459.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2467.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2524.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2474.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2541.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2508.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2488.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2498.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2526.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2520.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2463.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2522.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2480.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2513.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2472.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2469.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2480.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2467.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2474.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2492.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2458.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2537.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2519.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2532.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2506.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2531.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2503.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2477.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2473.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2482.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2514.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2443.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2502.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2510.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2453.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2530.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2546.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2535.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2452.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2549.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2498.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2538.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2474.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2525.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2481.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2456.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2549.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2542.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2463.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2505.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2484.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2501.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2518.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2548.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2547.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2523.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2542.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2487.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2474.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2531.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2505.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2451.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2441.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2504.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2455.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2544.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2545.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2445.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2533.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2546.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2486.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2467.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2499.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2496.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2548.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2542.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2525.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2468.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2467.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2461.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2469.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2455.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2448.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2499.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2470.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2511.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2447.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2508.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2454.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2547.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2484.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2540.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2546.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2515.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2483.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2536.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2454.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2536.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2526.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2485.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2497.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2490.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2503.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2519.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2509.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2510.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2523.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2458.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2494.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2488.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2471.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2512.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2451.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/giraffe/giraffe2452.jpg,giraffe
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2472.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2487.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2465.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2509.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2452.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2518.jpg,tiger
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2528.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2453.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2478.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2477.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2509.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2526.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2488.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/frog/frog2473.jpg,frog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/dog/dog2480.jpg,dog
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/horse/horse2471.jpg,horse
+C:\Users\206255\Desktop\Saugata Paul\Classification-pipeline-for-transfer-learning\data/tiger/tiger2512.jpg,tiger
