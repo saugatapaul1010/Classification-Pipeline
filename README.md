@@ -1005,17 +1005,19 @@ If the confusion matrix is the result of test data classification, the recommend
 ```
 References to the library: https://www.pycm.ir/doc/index.html#Cite
 
-  @article{Haghighi2018,
-  doi = {10.21105/joss.00729},
-  url = {https://doi.org/10.21105/joss.00729},
-  year  = {2018},
-  month = {may},
-  publisher = {The Open Journal},
-  volume = {3},
-  number = {25},
-  pages = {729},
-  author = {Sepand Haghighi and Masoomeh Jasemi and Shaahin Hessabi and Alireza Zolanvari},
-  title = {{PyCM}: Multiclass confusion matrix library in Python},
-  journal = {Journal of Open Source Software}
-  }
+@article
+    {
+    Haghighi2018,
+    doi = {10.21105/joss.00729},
+    url = {https://doi.org/10.21105/joss.00729},
+    year  = {2018},
+    month = {may},
+    publisher = {The Open Journal},
+    volume = {3},
+    number = {25},
+    pages = {729},
+    author = {Sepand Haghighi and Masoomeh Jasemi and Shaahin Hessabi and Alireza Zolanvari},
+    title = {{PyCM}: Multiclass confusion matrix library in Python},
+    journal = {Journal of Open Source Software}
+}
 ```
