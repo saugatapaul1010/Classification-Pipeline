@@ -60,7 +60,11 @@ options:
 
 Before executing the above command, the variable 'df_path' should point to the location of the data folder. Change this according the path in your system. The script will take images folders as inputs and create a csv file which will contain all the image names along with the full path names and it's corresponding class label. It will then ranodmly split the CSV file into three seperate files - 'train.csv', 'val.csv' and 'test.csv'. The files will be located inside a 'data_df' folder inside the root directory. This approach allows us to save disk space and computational power and also the time taken to copy-paste the images to three different locations. While splitting the dataset, the 'stratify' option is set to True in order to tackle the problem of imbalanced datasets.
 
-# Training the model
+This is how a sample dataframe would like look after this stage:
+
+<img src='https://github.com/saugatapaul1010/Classification-pipeline-for-transfer-learning/blob/master/images/dataframe_eval.jpg'>
+
+# Training the model:
 
 ```
 python train_pipeline.py --model_name vgg16 --epochs1 10 --epochs2 20 --metric accuracy
@@ -126,3 +130,12 @@ options:
 By default, the eval_pipeline script will automatically be executed during and after the course of training. You don't have to manually input the parameters. This is handy just in case you need to generate reports for a particualr model or a particualar stage.
 
 Let's briefly understand what's happening in the evaluation stage. The trained models which are saved in '/models' folder are loaded into the memory and it's evaluated by recording the performance of the model on a completely unseen test data. All reports related to model evaluation is placed inside the '/evaluation' folder in the root directory. At the end of the evaluation phase all these reports will be generated - the train vs loss validation curves to determine and overfitted or underfitted model, the classification report exported to a CSV file, the confusion matrix, precision and recall matrices exported as PNG files, a classification report, a comprehensive report analysis containing all possible classification metrics that are used in general. The complete report is exported into an html file and saved under the '/evaluation' folder. Additionally, there are numerous component CSV files which stores the results for only a certain kind of metric. For further details please read the doc strings for each of the functions.
+
+# Reports:
+
+This is how the classification report will look like:
+<img src="https://github.com/saugatapaul1010/Classification-pipeline-for-transfer-learning/blob/master/images/classification_report.jpg">
+
+
+
+<img src='https://github.com/saugatapaul1010/Classification-pipeline-for-transfer-learning/blob/master/images/cm_matrix.jpg'>
