@@ -22,7 +22,7 @@ Go to the root folder of this project in your shell and execute the above comman
 
 # Downloading the pre-trained model weights:
 
-'''
+```
 
 wget https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5
 
@@ -36,7 +36,7 @@ wget https://github.com/keras-team/keras-applications/releases/download/resnet/r
 
 wget https://github.com/fchollet/deep-learning-models/releases/download/v0.4/xception_weights_tf_dim_ordering_tf_kernels_notop.h5
 
-'''
+```
 
 Download and place these weights in the '/weights' folder. These are the pre-trained architectures
 
