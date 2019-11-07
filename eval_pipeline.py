@@ -12,10 +12,10 @@ import seaborn as sns
 import numpy as np
 import pandas as pd
 import os
-
 from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 import argparse
+import pycm
 
 
 df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
@@ -73,8 +73,12 @@ def plt_epoch_error(history_df, model_name, stage_no):
 
 def get_metrics(y_true, y_pred):
     """
-    This function is used to get the list of important metrics
-    and save them as a CSV file in the evaluation folder.
+    This function is used to get only the list of important metrics
+    and save them as a CSV file in the evaluation folder. There will
+    be a seperate function which will list down all the important
+    class wise metrics. However, this function will contain only the
+    most important metrics for the classification problem that we are
+    trying to solve at hand.
     """
 
     scores = dict()
@@ -90,30 +94,72 @@ def get_metrics(y_true, y_pred):
 
     return df_metrics
 
+def get_complete_report(y_true, y_pred, model_name, stage_no, class_indices):
+    """
+    This is a separate function written to calculate every possible 
+    classification metric value that different classification problems
+    might need. This function will be used to get a report of all the
+    classification metrics, as well the class wise statistics for all the
+    classes and export it to a HTML file saved at the evaluation path.
+    
+    References to the library: https://www.pycm.ir/doc/index.html#Cite
+        
+      @article{Haghighi2018,
+      doi = {10.21105/joss.00729},
+      url = {https://doi.org/10.21105/joss.00729},
+      year  = {2018},
+      month = {may},
+      publisher = {The Open Journal},
+      volume = {3},
+      number = {25},
+      pages = {729},
+      author = {Sepand Haghighi and Masoomeh Jasemi and Shaahin Hessabi and Alireza Zolanvari},
+      title = {{PyCM}: Multiclass confusion matrix library in Python},
+      journal = {Journal of Open Source Software}
+      }
+      
+    """
+    
+    label_indices = dict()
+    for (k,v) in class_indices.items():
+        label_indices[v]=k
+        
+    y_true_label = list(y_true)
+    y_pred_label = list(y_pred)
+    
+    for idx, item in enumerate(y_true_label):
+        y_true_label[idx] = label_indices[item]
+        
+    for idx, item in enumerate(y_pred_label):
+        y_pred_label[idx] = label_indices[item]
+    
+    cm = pycm.ConfusionMatrix(y_true_label, y_pred_label)
+    cm.save_html(eval_path+'{}_detailed_metrics_analysis_stage_{}'.format(model_name,stage_no))
+    
 def plot_confusion_matrix(test_y, predict_y, test_generator, model_name, stage_no):
     """
     Based on the model name and the stage number, this function will be used
     to plot the confusion matrix, recall matrix and precision matrix and save
     them as image files in the evaluation folder.
     """
-    C = confusion_matrix(test_y, predict_y)
-    print("Percentage of misclassified points ",(len(test_y)-np.trace(C))/len(test_y)*100)
+    CM = metrics.confusion_matrix(test_y, predict_y)
+    print("Percentage of misclassified points ",(len(test_y)-np.trace(CM))/len(test_y)*100)
 
-    A = (((C.T)/(C.sum(axis=1))).T)
-    B = (C/C.sum(axis=0))
+    RM = (((CM.T)/(CM.sum(axis=1))).T)
+    PM = (CM/CM.sum(axis=0))
 
     labels = list(test_generator.class_indices.keys())
     cmap=sns.light_palette("green")
     # representing A in heatmap format
     plt.figure(figsize=(10,10))
-    sns.heatmap(C, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
+    sns.heatmap(CM, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
     plt.title('{}_cm_matrix_stage_{}'.format(model_name,stage_no))
     plt.savefig(eval_path+'{}_cm_matrix_stage_{}.png'.format(model_name,stage_no))
 
     plt.figure(figsize=(10,10))
-    sns.heatmap(B, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
+    sns.heatmap(PM, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
     plt.title('{}_recall_matrix_stage_{}'.format(model_name,stage_no))
@@ -121,11 +167,12 @@ def plot_confusion_matrix(test_y, predict_y, test_generator, model_name, stage_n
 
     # representing B in heatmap format
     plt.figure(figsize=(10,10))
-    sns.heatmap(A, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
+    sns.heatmap(RM, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
     plt.title('{}_precsion_matrix_stage_{}'.format(model_name,stage_no))
     plt.savefig(eval_path+'{}_recall_matrix_stage_{}.png'.format(model_name,stage_no))
+    
 
 def predict_on_test(model_name, size_dict, stage_no):
     """
@@ -168,7 +215,7 @@ def predict_on_test(model_name, size_dict, stage_no):
 
     dictionary = dict(zip(df_test.true.values, df_test.class_label.values))
 
-    cm=confusion_matrix(y_true, y_pred)
+    cm=metrics.confusion_matrix(y_true, y_pred)
     df_cm = pd.DataFrame(cm).transpose()
     df_cm=df_cm.rename(mapper=dict, index=dictionary, columns=dictionary, copy=True, inplace=False)
     df_cm.to_csv(eval_path+'{}_cm_stage_{}.csv'.format(model_name,stage_no))
@@ -176,10 +223,10 @@ def predict_on_test(model_name, size_dict, stage_no):
 
 
     #Classification Report
-    report=classification_report(y_true,
-                                 y_pred,
-                                 target_names=list(class_indices.keys()),
-                                 output_dict=True)
+    report=metrics.classification_report(y_true,
+                                         y_pred,
+                                         target_names=list(class_indices.keys()),
+                                         output_dict=True)
 
     df_rep = pd.DataFrame(report).transpose()
     df_rep.to_csv(eval_path+'{}_class_report_stage_{}.csv'.format(model_name,stage_no))
@@ -193,8 +240,12 @@ def predict_on_test(model_name, size_dict, stage_no):
 
     history_df=pd.read_csv(model_path+"{}_history_stage_{}.csv".format(model_name, stage_no))
 
+    #Get the train vs validation loss for all epochs
     plt_epoch_error(history_df,model_name,stage_no)
-
+    
+    #Generate a complete report and save it as an HTML file in the evaluation folder location
+    get_complete_report(y_true, y_pred, model_name, stage_no, class_indices)
+    
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='this script will train 3 machine learning models using transfer learning')
     parser.add_argument('--model_name', type=str, default='vgg16', help='choose the type of model you want to train with')
@@ -210,48 +261,3 @@ if __name__ == '__main__':
     size_dict["xception"] = (299, 299)
 
     predict_on_test(args.model_name, size_dict, args.stage_num)
-    
-def plot_roc_auc():
-    # Compute macro-average ROC curve and ROC area
-
-    # First aggregate all false positive rates
-    all_fpr = np.unique(np.concatenate([fpr[i] for i in range(n_classes)]))
-    
-    # Then interpolate all ROC curves at this points
-    mean_tpr = np.zeros_like(all_fpr)
-    for i in range(n_classes):
-        mean_tpr += interp(all_fpr, fpr[i], tpr[i])
-    
-    # Finally average it and compute AUC
-    mean_tpr /= n_classes
-    
-    fpr["macro"] = all_fpr
-    tpr["macro"] = mean_tpr
-    roc_auc["macro"] = auc(fpr["macro"], tpr["macro"])
-    
-    # Plot all ROC curves
-    plt.figure()
-    plt.plot(fpr["micro"], tpr["micro"],
-             label='micro-average ROC curve (area = {0:0.2f})'
-                   ''.format(roc_auc["micro"]),
-             color='deeppink', linestyle=':', linewidth=4)
-    
-    plt.plot(fpr["macro"], tpr["macro"],
-             label='macro-average ROC curve (area = {0:0.2f})'
-                   ''.format(roc_auc["macro"]),
-             color='navy', linestyle=':', linewidth=4)
-    
-    colors = cycle(['aqua', 'darkorange', 'cornflowerblue'])
-    for i, color in zip(range(n_classes), colors):
-        plt.plot(fpr[i], tpr[i], color=color, lw=lw,
-                 label='ROC curve of class {0} (area = {1:0.2f})'
-                 ''.format(i, roc_auc[i]))
-    
-    plt.plot([0, 1], [0, 1], 'k--', lw=lw)
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Some extension of Receiver operating characteristic to multi-class')
-    plt.legend(loc="lower right")
-    plt.show()

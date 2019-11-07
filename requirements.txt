@@ -10,3 +10,6 @@ keras
 cv2
 glob
 imgaug
+itertools
+scipy
+pycm

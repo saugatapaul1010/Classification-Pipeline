@@ -73,5 +73,3 @@ if __name__ == '__main__':
     prepare_data(args.val_split, args.test_split, args.source)
     print("Train, Test and Validation dataset prepared successfully..")
     print("Time taken to prepare the dataset: ",dt.now()-st)
-
-
