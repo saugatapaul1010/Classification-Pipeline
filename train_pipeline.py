@@ -31,15 +31,15 @@ from keras.utils import plot_model
 
 
 
-df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
-model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
-weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
-source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
-
 df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
 model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
 weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\weights\\"
 source="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data\\"
+
+df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
+model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
+weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
+source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
 
 os.mkdir(model_path) if not os.path.isdir(model_path) else None
 
@@ -317,7 +317,7 @@ def train_stage2(input_params, stage1_params, model_stg2):
     model_stg2.save(model_path+"{}_model_stage_{}.h5".format(input_params['model_name'],2))
 
     save_summary(model_stg2, input_params['model_name'], 2)
-    #plot_layer_arch(model_stg2, input_params['model_name'], 2)
+    plot_layer_arch(model_stg2, input_params['model_name'], 2)
 
     print("\nTime taken to train the model in stage 2: ",dt.now()-st)
 
@@ -351,8 +351,8 @@ if __name__ == '__main__':
     parser.add_argument('--stage2_lr', type=float, default=0.000001, help="enter the learning rate for stage 2 training")
     parser.add_argument('--monitor',type=str, default='val_accuracy', help="enter the metric you want to monitor")
     parser.add_argument('--metric',type=str, default='accuracy', help="enter the metric you want the model to optimize")
-    parser.add_argument('--epochs1',type=int, default=10, help="enter the number of epochs you want the model to train for in stage 1")
-    parser.add_argument('--epochs2',type=int, default=20, help="enter the number of epochs you want the model to train for in stage 2")
+    parser.add_argument('--epochs1',type=int, default=5, help="enter the number of epochs you want the model to train for in stage 1")
+    parser.add_argument('--epochs2',type=int, default=5, help="enter the number of epochs you want the model to train for in stage 2")
     parser.add_argument('--finetune',type=str, default='yes', help="state 'yes' or 'no' to say whether or not you want to fine tune the convolution block")
     args = parser.parse_args()
 

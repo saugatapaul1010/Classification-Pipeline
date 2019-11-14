@@ -19,18 +19,17 @@ import pycm
 
 
 
+df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
+model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
+weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\weights\\"
+source="C:\\Users\\206255\\Desktop\\Saugata Paul\Classification-pipeline-for-transfer-learning\\data\\"
+eval_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\evaluation\\"
 
 df_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data_df/"
 model_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/models/"
 weights_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/weights/"
 source="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/data/"
 eval_path="/home/developer/Desktop/Saugata/e-Crash/Classification-pipeline-for-transfer-learning/evaluation/"
-
-df_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\data_df\\"
-model_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\models\\"
-weights_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\weights\\"
-source="C:\\Users\\206255\\Desktop\\Saugata Paul\Classification-pipeline-for-transfer-learning\\data\\"
-eval_path="C:\\Users\\206255\\Desktop\\Saugata Paul\\Classification-pipeline-for-transfer-learning\\evaluation\\"
 
 os.mkdir(eval_path) if not os.path.isdir(eval_path) else None
 
@@ -154,14 +153,14 @@ def plot_confusion_matrix(test_y, predict_y, test_generator, model_name, stage_n
     labels = list(test_generator.class_indices.keys())
     cmap=sns.light_palette("green")
     # representing A in heatmap format
-    plt.figure(figsize=(10,10))
+    plt.figure(figsize=(20,8))
     sns.heatmap(CM, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
     plt.title('{}_cm_matrix_stage_{}'.format(model_name,stage_no))
     plt.savefig(eval_path+'{}_cm_matrix_stage_{}.png'.format(model_name,stage_no))
 
-    plt.figure(figsize=(10,10))
+    plt.figure(figsize=(20,8))
     sns.heatmap(PM, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
@@ -169,7 +168,7 @@ def plot_confusion_matrix(test_y, predict_y, test_generator, model_name, stage_n
     plt.savefig(eval_path+'{}_precision_matrix_stage_{}.png'.format(model_name,stage_no))
 
     # representing B in heatmap format
-    plt.figure(figsize=(10,10))
+    plt.figure(figsize=(20,8))
     sns.heatmap(RM, annot=True, cmap=cmap, fmt=".3f", xticklabels=labels, yticklabels=labels)
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
