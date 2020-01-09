@@ -8,6 +8,6 @@ stage1_lr,0.0005
 stage2_lr,1e-05
 monitor,val_accuracy
 metric,accuracy
-epochs1,1
-epochs2,1
+epochs1,10
+epochs2,10
 finetune,yes
