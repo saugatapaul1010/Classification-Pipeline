@@ -1,0 +1,13 @@
+hyperparameter,value
+
+sim,1
+model_name,vgg16
+dense_neurons,64
+batch_size,32
+stage1_lr,0.0005
+stage2_lr,1e-05
+monitor,val_accuracy
+metric,accuracy
+epochs1,1
+epochs2,1
+finetune,yes
