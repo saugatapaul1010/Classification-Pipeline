@@ -21,6 +21,8 @@ import evaluation
 from keras.utils import plot_model
 from keras.applications.vgg16 import preprocess_input
 from contextlib import redirect_stdout
+from time import time
+from keras.callbacks.tensorboard_v1 import TensorBoard
 
 #FORCE GPU USE
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
@@ -186,7 +188,22 @@ def callbacks_list(input_params, stage_n, path_dict):
     early_stop = EarlyStopping(monitor=input_params['monitor'], 
                                patience = 15)
     history = History()
-    list_ = [checkpoint, reduce_learning_rate, history, early_stop]
+    
+    tensorboard = TensorBoard(log_dir=path_dict['model_path']+"stage{}/".format(stage_n)+"logs/{}".format(time),
+                              histogram_freq=0, 
+                              batch_size=32, 
+                              write_graph=True, 
+                              write_grads=False, 
+                              write_images=False, 
+                              embeddings_freq=0, 
+                              embeddings_layer_names=None, 
+                              embeddings_metadata=None, 
+                              embeddings_data=None, 
+                              update_freq='epoch')
+    
+    #!tensorboard --logdir=/home/developer/Desktop/Saugata/Classification-Pipeline/simulations/SIM_01/models/stage1/logs/
+    
+    list_ = [checkpoint, reduce_learning_rate, history, early_stop, tensorboard]
     return list_
 
 def no_of_classes(path_dict):

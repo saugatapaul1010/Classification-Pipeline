@@ -1,5 +1,5 @@
 ,metrics,values
-0,acc_score,1.0
-1,f1_score,1.0
-2,precision,1.0
-3,recall,1.0
+0,acc_score,0.8
+1,f1_score,0.7994987468671679
+2,precision,0.803030303030303
+3,recall,0.8

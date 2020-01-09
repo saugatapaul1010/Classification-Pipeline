@@ -8,8 +8,6 @@ import os
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
-
-
 def create_dir(params):
     
     SIM_NUM = params['sim']
