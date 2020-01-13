@@ -1,4 +1,4 @@
-# Machine Learning pipeline for training classification algorithms.
+# Deep Learning pipeline for training image classification algorithms.
 
 This repository contains an end to end Deep Learning pipeline for training classification models on images using pre trained model in Keras. 
 This pipeline can be used to train any classification algorithms for images provided the data is fed to the pipeline in the correct way.
