@@ -1,8 +1,8 @@
 hyperparameter,value
 
 sim,1
-model_name,vgg16
-dense_neurons,64
+model_name,inceptionv3
+dense_neurons,128
 batch_size,32
 stage1_lr,0.0005
 stage2_lr,1e-05

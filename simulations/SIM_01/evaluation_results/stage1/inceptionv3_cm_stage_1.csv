@@ -1,0 +1,6 @@
+,cat,horse,monkey,tiger,tree
+cat,100,0,0,0,0
+horse,0,100,0,0,0
+monkey,0,0,100,0,0
+tiger,0,0,0,100,0
+tree,0,0,0,0,100

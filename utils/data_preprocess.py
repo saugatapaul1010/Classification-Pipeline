@@ -12,7 +12,7 @@ from datetime import datetime as dt
 import pandas as pd
 import argparse
 
-root_path = "/home/developer/Desktop/Saugata/Classification-Pipeline/"
+root_path = "/home/developer/Desktop/Saugata/E-Crash/Classification-Pipeline/"
 
 df_path = root_path + "data"
 destination = root_path + "data_df/"

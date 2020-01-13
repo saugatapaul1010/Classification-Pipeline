@@ -1,0 +1,9 @@
+,precision,recall,f1-score,support
+cat,1.0,1.0,1.0,100.0
+horse,1.0,1.0,1.0,100.0
+monkey,1.0,1.0,1.0,100.0
+tiger,1.0,1.0,1.0,100.0
+tree,1.0,1.0,1.0,100.0
+accuracy,1.0,1.0,1.0,1.0
+macro avg,1.0,1.0,1.0,500.0
+weighted avg,1.0,1.0,1.0,500.0
