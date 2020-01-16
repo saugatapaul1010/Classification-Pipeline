@@ -25,8 +25,10 @@ def create_dirs(params):
     SIM_NUM = params['sim']
     
     #This dictionary, path_dict will contain all the locations of evaluation results and model training.
+    os.mkdir(root_path + "simulations/") if not os.path.isdir(root_path + "simulations/") else None
+    os.mkdir(root_path + "data/") if not os.path.isdir(root_path + "data/") else None    
+
     path_dict = dict()
-    
     path_dict['sim_path'] = root_path + "simulations/" + "SIM_{:02d}/".format(SIM_NUM)
     
     if(os.path.isdir(path_dict['sim_path']) == False):
