@@ -23,8 +23,6 @@ from keras.applications.inception_resnet_v2 import preprocess_input as preproces
 from keras.applications.nasnet import preprocess_input as preprocess_input_nasnet
 from utils import Utility
 
-
-
 #FORCE GOU USE
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
@@ -206,7 +204,6 @@ class EvalUtils:
         plt.title('{}_precsion_matrix_stage_{}'.format(self.input_params["model_name"],self.stage_no))
         plt.savefig(self.path_dict["eval_path"]+"stage{}/".format(self.stage_no)+'{}_recall_matrix_stage_{}.png'.format(self.input_params["model_name"],self.stage_no))
     
-    #self = input params, stage, path dict
     def predict_on_test(self):
         """
         This function will load the test dataset, pre-process the test
@@ -226,6 +223,8 @@ class EvalUtils:
                             freezing the convolution base. In stage 2, we will re adjust the weights trained
                             in stage 1 by training the top convolution layers, by freezing the dense layers.
         """
+        
+        print("\nStarting model evaluation for stage {}..".format(self.stage_no))
         
         #Create an utility class object to access the class methods
         utils_obj = Utility(self.input_params, self.path_dict)

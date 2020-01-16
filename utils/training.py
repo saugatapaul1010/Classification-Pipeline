@@ -193,6 +193,8 @@ class TrainingUtils:
         
         utils_obj = Utility(self.input_params, self.path_dict)
         
+        #Put if statement here. If model_name != custom then run this block, or else. Do something else.
+        
         base_model = utils_obj.load_imagenet_model()
         
         #Adding a global spatial average pooling layer
@@ -276,8 +278,8 @@ class TrainingUtils:
         stage1_params['nb_val_samples']=nb_val_samples
     
         print("\nTime taken to train the model in stage 1: ",dt.now()-st)
-    
-        print("\nStarting model evaluation for stage 1..")
+        
+        #Start model evaluation for Stage 1
         eval_utils = EvalUtils(self.input_params, self.path_dict, 1)
         eval_utils.predict_on_test()
     
@@ -371,7 +373,7 @@ class TrainingUtils:
         TrainingUtils.save_summary(self, model_stg2, 2)
         TrainingUtils.plot_layer_arch(self, model_stg2, 2)
             
-        print("\nStarting model evaluation for stage 2..")
+        #Start model evaluation for Stage 2
         eval_utils = EvalUtils(self.input_params, self.path_dict, 2)
         eval_utils.predict_on_test()
     
